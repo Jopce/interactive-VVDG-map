@@ -1,0 +1,26 @@
+{
+    "name": "interactive-VVDG-map",
+    "version": "1.0.0",
+    "description": "VVDG final project by Jokūbas Petraitis and Matas Semėnas from grade 2F.",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel src/index.html",
+        "build": "parcel build src/index.html", 
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Jopce/interactive-VVDG-map.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Jopce/interactive-VVDG-map/issues"
+    },
+    "homepage": "https://github.com/Jopce/interactive-VVDG-map#readme",
+    "devDependencies": {
+        "parcel-bundler": "^1.12.5",
+        "sass": "^1.32.12"
+    }
+}
