@@ -1,8 +1,0 @@
-@use 'abstracts/variables' as var;
-
-div {
-    color: var.$another-test;
-    background-color: var.$test;
-    width: 100vh;
-    height: 100vh;
-}

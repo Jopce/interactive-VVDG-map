@@ -1,9 +1,0 @@
-@use '../abstracts/variables';
-
-.inner {
-    color: variables.$another-test;
-    background-color: variables.$test;
-    border: 20px 20px solid black;
-    width: 50vh;
-    height: 50vh;
-}
