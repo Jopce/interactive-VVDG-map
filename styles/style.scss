@@ -7,15 +7,36 @@ $fill: cyan;
     background-color: white;
 }
 
-div {
-    @include center();
-    width: 500px;
-    height: auto;
-}
-
 path.cls-2:hover {
     fill: $fill;
 }
 polygon.cls-2:hover {
     fill: $fill;
+}
+
+#floor2,
+#floor3 {
+    width: 500px;
+    height: auto;
+    border: 2px solid black;
+}
+
+#floor1map {
+    border: 2px solid black;
+    max-width: 500px;
+    height: auto;
+}
+
+// #floor1map,
+#floor2map,
+#floor3map {
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+}
+
+#floor1rooms,
+#floor2rooms,
+#floor3rooms {
+    border: 2px solid black;
 }
