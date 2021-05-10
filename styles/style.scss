@@ -1,0 +1,21 @@
+$fill: cyan;
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+div {
+    @include center();
+    width: 500px;
+    height: auto;
+}
+
+path.cls-2:hover {
+    fill: $fill;
+}
+polygon.cls-2:hover {
+    fill: $fill;
+}

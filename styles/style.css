@@ -1,0 +1,23 @@
+div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  width: 500px;
+  height: auto;
+}
+
+path.cls-2:hover {
+  fill: cyan;
+}
+
+polygon.cls-2:hover {
+  fill: cyan;
+}
+/*# sourceMappingURL=style.css.map */
