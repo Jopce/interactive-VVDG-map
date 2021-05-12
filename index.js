@@ -1,3 +1,5 @@
+const fillcolor = "rgb(64, 43, 122)"; //vvdgpurple
+
 document.addEventListener("DOMContentLoaded", function () {
     // make buttons call function that changes the visible floor
     document
@@ -15,12 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // by default load 2nd floor
     change_floor("floor2");
 
+    document.querySelector("#close").addEventListener("click", () => close())
 
     //change color and window pop up
     document.querySelectorAll(".st0").forEach(function(room) {
         //room.addEventListener("click", () => info(this.dataset.name)) neveikia
         room.onclick = function(event) {
-            const fillcolor = "rgb(64, 43, 122)"; //vvdgpurple
             //clear all color
             document.querySelectorAll(`polygon[style="fill: ${fillcolor};"], path[style="fill: ${fillcolor};"]`).forEach(function(element) {
                 element.removeAttribute("style");
@@ -28,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const data = event.target.dataset;
             //create a window on the left with collected data from the dataset
-            info(data.name);
+            info(data.name, data.num, data.desc, data.path);
             event.target.style.fill = fillcolor;
         }
     })
@@ -47,5 +49,25 @@ function change_floor(floor) {
 
 //create window on the left
 function info(name, num, desc, path) {
-    console.log(name);
+    let infowindow = document.querySelector("#window")
+    infowindow.style.display = "inline"
+
+    let imgtag = infowindow.firstElementChild.firstElementChild
+
+    if (name !== undefined) imgtag.nextSibling.nextSibling.textContent = name;
+
+    if (num !== undefined) imgtag.nextSibling.nextSibling.nextSibling.textContent = `Nr. - ${num}`;
+
+    if (desc !== undefined) infowindow.firstElementChild.lastElementChild.textContent = desc;
+
+    if (path === undefined) {imgtag.style.display = "none"} else {imgtag.src = path}
+}
+
+function close() {
+    //hide window
+    document.querySelector("#window").removeAttribute("style")
+    //clear all color
+    document.querySelectorAll(`polygon[style="fill: ${fillcolor};"], path[style="fill: ${fillcolor};"]`).forEach(function(element) {
+        element.removeAttribute("style");
+    });
 }

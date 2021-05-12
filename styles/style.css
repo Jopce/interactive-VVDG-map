@@ -27,4 +27,45 @@ path.st0:hover, polygon.st0:hover {
 #floor3rooms {
   border: 2px solid black;
 }
+
+#window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 20%;
+  height: 100%;
+  background-color: white;
+}
+
+#window .info {
+  padding: 10px;
+  text-align: center;
+}
+
+#window .info .foto {
+  width: 80%;
+  height: auto;
+}
+
+#window .info button {
+  float: right;
+  padding: 2px 2px 0 2px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+#window .info button:hover {
+  background-color: #cfcfcf;
+}
+
+#window .info button img {
+  width: 24px;
+  height: 24px;
+}
+
+#window .info h3 {
+  margin-top: 30px;
+}
 /*# sourceMappingURL=style.css.map */
