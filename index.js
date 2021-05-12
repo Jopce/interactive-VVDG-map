@@ -23,10 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".st0").forEach(function(room) {
         //room.addEventListener("click", () => info(this.dataset.name)) neveikia
         room.onclick = function(event) {
-            //clear all color
-            document.querySelectorAll(`polygon[style="fill: ${fillcolor};"], path[style="fill: ${fillcolor};"]`).forEach(function(element) {
-                element.removeAttribute("style");
-            });
+            clear_color();
 
             const data = event.target.dataset;
             //create a window on the left with collected data from the dataset
@@ -36,6 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 });
+
+function clear_color() {
+    document.querySelectorAll(`polygon[style="fill: ${fillcolor};"], path[style="fill: ${fillcolor};"]`).forEach(function(element) {
+        element.removeAttribute("style");
+    });
+}
 
 // change floor, input is floor div id
 function change_floor(floor) {
@@ -68,9 +71,5 @@ function close() {
     //hide window
     infowindow.removeAttribute("style")
 
-
-    //clear all color
-    document.querySelectorAll(`polygon[style="fill: ${fillcolor};"], path[style="fill: ${fillcolor};"]`).forEach(function(element) {
-        element.removeAttribute("style");
-    });
+    clear_color();
 }
