@@ -53,19 +53,22 @@ function info(name, num, desc, path) {
     infowindow.style.display = "inline"
 
     let imgtag = infowindow.firstElementChild.firstElementChild
+    let nametag = imgtag.nextSibling.nextSibling.nextSibling.nextSibling
+    let numtag = imgtag.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling
+    let desctag = infowindow.firstElementChild.lastElementChild
 
-    if (name !== undefined) imgtag.nextSibling.nextSibling.textContent = name;
-
-    if (num !== undefined) imgtag.nextSibling.nextSibling.nextSibling.textContent = `Nr. - ${num}`;
-
-    if (desc !== undefined) infowindow.firstElementChild.lastElementChild.textContent = desc;
-
-    if (path === undefined) {imgtag.style.display = "none"} else {imgtag.src = path}
+    if (name !== undefined) {nametag.textContent = name;} else {nametag.textContent = "Pavadinimo nėra";}
+    if (num !== undefined) {numtag.textContent = `Nr. - ${num}`;} else {numtag.textContent = "";}
+    if (desc !== undefined) {desctag.textContent = desc;} else {desctag.textContent = "Aprašymo nėra"}
+    if (path === undefined) {imgtag.style.display = "none"} else {imgtag.src = path; imgtag.style.display = "inline"}
 }
 
 function close() {
+    infowindow = document.querySelector("#window")
     //hide window
-    document.querySelector("#window").removeAttribute("style")
+    infowindow.removeAttribute("style")
+
+
     //clear all color
     document.querySelectorAll(`polygon[style="fill: ${fillcolor};"], path[style="fill: ${fillcolor};"]`).forEach(function(element) {
         element.removeAttribute("style");
