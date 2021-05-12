@@ -1,4 +1,6 @@
 $fill: cyan;
+$vvdgpurple: rgb(64, 43, 122);
+$maphover: rgb(216, 216, 216);
 
 @mixin center {
     display: flex;
@@ -7,11 +9,9 @@ $fill: cyan;
     background-color: white;
 }
 
-path.cls-2:hover {
-    fill: $fill;
-}
-polygon.cls-2:hover {
-    fill: $fill;
+//visi kambariai st0 klases
+path.st0:hover, polygon.st0:hover {
+    fill: $maphover;
 }
 
 #floor2,
@@ -23,7 +23,7 @@ polygon.cls-2:hover {
 
 #floor1map {
     border: 2px solid black;
-    max-width: 500px;
+    max-width: 600px;
     height: auto;
 }
 

@@ -1,9 +1,5 @@
-path.cls-2:hover {
-  fill: cyan;
-}
-
-polygon.cls-2:hover {
-  fill: cyan;
+path.st0:hover, polygon.st0:hover {
+  fill: #d8d8d8;
 }
 
 #floor2,
@@ -15,7 +11,7 @@ polygon.cls-2:hover {
 
 #floor1map {
   border: 2px solid black;
-  max-width: 500px;
+  max-width: 600px;
   height: auto;
 }
 
