@@ -2,30 +2,60 @@ path.st0:hover, polygon.st0:hover {
   fill: #d8d8d8;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#floor1,
 #floor2,
 #floor3 {
-  width: 500px;
-  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5fr 2fr;
+      grid-template-columns: 5fr 2fr;
+  background-color: #402b7a;
+  gap: 1rem;
   border: 2px solid black;
+  padding: 1rem;
 }
 
-#floor1map {
-  border: 2px solid black;
-  max-width: 600px;
-  height: auto;
+@media only screen and (max-width: 768px) {
+  #floor1,
+  #floor2,
+  #floor3 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    background-color: #402b7a;
+    gap: 1rem;
+    border: 2px solid black;
+    padding: 1rem;
+  }
 }
 
+#floor1map,
 #floor2map,
 #floor3map {
   border: 2px solid black;
-  width: 500px;
-  height: 500px;
+  max-width: 1000px;
+  min-width: 100px;
+  height: auto;
+  background-color: white;
 }
 
 #floor1rooms,
 #floor2rooms,
 #floor3rooms {
   border: 2px solid black;
+  background-color: white;
+}
+
+#main-div {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 #window {

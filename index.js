@@ -47,7 +47,7 @@ function change_floor(floor) {
     document.querySelector("#floor2").style.display = "none";
     document.querySelector("#floor3").style.display = "none";
 
-    document.querySelector(`#${floor}`).style.display = "block";
+    document.querySelector(`#${floor}`).style.display = "grid";
 }
 
 //create window on the left
