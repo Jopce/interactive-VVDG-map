@@ -8,6 +8,6 @@ Matai, as kolkas palieku taip, kad galima būtų tęsti darbą. Vėliau turbūt 
 
 Aš planuoju daryt dabar, kad galima būtų junginet tarp aukštų tai pranešu, kad nešvaistyti laiko.
 
-Darau visu aukstu svg, kad paspaudus ant ju nusispalvintu ir kad paspaudus ant kambario islystu langas be jokio info kolkas.
+2021/05/12 Darau visų aukštų svg. Tada kad paspaudus ant kambarių jie nusispalvintų išlystų langas be jokio info kolkas. - Viskas done išskyrus 3 auksšto svg
 
 2021/05/12 - įmečiau šiek tiek progreso su layout ir jau įdėjau šiek tiek mobile responsive design. Tai dar tik toks ekskizas, bet vaizdas po truputį susidaro.
