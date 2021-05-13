@@ -11,3 +11,5 @@ Aš planuoju daryt dabar, kad galima būtų junginet tarp aukštų tai pranešu,
 2021/05/12 Darau visų aukštų svg. Tada kad paspaudus ant kambarių jie nusispalvintų išlystų langas be jokio info kolkas. - Viskas done išskyrus 3 auksšto svg
 
 2021/05/12 - įmečiau šiek tiek progreso su layout ir jau įdėjau šiek tiek mobile responsive design. Tai dar tik toks ekskizas, bet vaizdas po truputį susidaro.
+
+2021/05/13 - change floor buttons iš esmės baigti, žinoma dar galima dėl ko nors pasvarstyti, pakeičiau font, paėmiau iš vvdg.lt, scss patvarkiau, dar šen bei ten pakeičiau.
