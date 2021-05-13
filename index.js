@@ -48,6 +48,12 @@ function change_floor(floor) {
     document.querySelector("#floor3").style.display = "none";
 
     document.querySelector(`#${floor}`).style.display = "grid";
+
+    document.querySelector(`#floor1button`).classList.remove("active");
+    document.querySelector(`#floor2button`).classList.remove("active");
+    document.querySelector(`#floor3button`).classList.remove("active");
+
+    document.querySelector(`#${floor}button`).classList.add("active");
 }
 
 //create window on the left

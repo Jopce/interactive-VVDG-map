@@ -1,16 +1,69 @@
-path.st0:hover, polygon.st0:hover {
+path.st0:hover,
+polygon.st0:hover {
   fill: #d8d8d8;
+  cursor: pointer;
 }
 
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-#floor1,
-#floor2,
-#floor3 {
+#main-div {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+#main-div #button-div {
+  margin: 0.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.25rem;
+}
+
+#main-div #button-div #floor1button,
+#main-div #button-div #floor2button,
+#main-div #button-div #floor3button {
+  background-color: white;
+  font-size: 1rem;
+  padding: 0.5em 1em 0.5em 1em;
+  border: 2px solid #402b7a;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 4px #402b7a;
+          box-shadow: 0px 0px 4px #402b7a;
+  color: #402b7a;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+#main-div #button-div #floor1button.active, #main-div #button-div #floor1button:hover,
+#main-div #button-div #floor2button.active,
+#main-div #button-div #floor2button:hover,
+#main-div #button-div #floor3button.active,
+#main-div #button-div #floor3button:hover {
+  background-color: #402b7a;
+  color: white;
+  cursor: pointer;
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+#main-div #button-div #floor1button:active,
+#main-div #button-div #floor2button:active,
+#main-div #button-div #floor3button:active {
+  background-color: #402b7a;
+  color: white;
+  cursor: pointer;
+  background-color: #7359bb;
+}
+
+#main-div #floor1,
+#main-div #floor2,
+#main-div #floor3 {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5fr 2fr;
@@ -22,23 +75,23 @@ path.st0:hover, polygon.st0:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  #floor1,
-  #floor2,
-  #floor3 {
-    display: -ms-grid;
-    display: grid;
+  #main-div #floor1,
+  #main-div #floor2,
+  #main-div #floor3 {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    background-color: #402b7a;
-    gap: 1rem;
-    border: 2px solid black;
-    padding: 1rem;
   }
 }
 
-#floor1map,
-#floor2map,
-#floor3map {
+#main-div #floor1 #floor1map,
+#main-div #floor1 #floor2map,
+#main-div #floor1 #floor3map,
+#main-div #floor2 #floor1map,
+#main-div #floor2 #floor2map,
+#main-div #floor2 #floor3map,
+#main-div #floor3 #floor1map,
+#main-div #floor3 #floor2map,
+#main-div #floor3 #floor3map {
   border: 2px solid black;
   max-width: 1000px;
   min-width: 100px;
@@ -46,17 +99,17 @@ path.st0:hover, polygon.st0:hover {
   background-color: white;
 }
 
-#floor1rooms,
-#floor2rooms,
-#floor3rooms {
+#main-div #floor1 #floor1rooms,
+#main-div #floor1 #floor2rooms,
+#main-div #floor1 #floor3rooms,
+#main-div #floor2 #floor1rooms,
+#main-div #floor2 #floor2rooms,
+#main-div #floor2 #floor3rooms,
+#main-div #floor3 #floor1rooms,
+#main-div #floor3 #floor2rooms,
+#main-div #floor3 #floor3rooms {
   border: 2px solid black;
   background-color: white;
-}
-
-#main-div {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
 }
 
 #window {

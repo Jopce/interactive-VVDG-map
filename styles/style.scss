@@ -9,62 +9,96 @@ $maphover: rgb(216, 216, 216);
 }
 
 //visi kambariai st0 klases
-path.st0:hover, polygon.st0:hover {
+path.st0:hover,
+polygon.st0:hover {
     fill: $maphover;
+    cursor: pointer;
 }
 
 * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#floor1,
-#floor2,
-#floor3 {
-    display: grid;
-    grid-template-columns: 5fr 2fr;
-    background-color: $fill;
-    gap: 1rem;
-    border: 2px solid black;
-    padding: 1rem;
-}
-
-@media only screen and (max-width: 768px) {
-    #floor1,
-    #floor2,
-    #floor3 {
-        display: grid;
-        grid-template-columns: 1fr;
-        background-color: $fill;
-        gap: 1rem;
-        border: 2px solid black;
-        padding: 1rem;
-    }
-}
-
-#floor1map,
-#floor2map,
-#floor3map {
-    border: 2px solid black;
-    max-width: 1000px;
-    min-width: 100px;
-    height: auto;
-    background-color: white;
-}
-
-#floor1rooms,
-#floor2rooms,
-#floor3rooms {
-    border: 2px solid black;
-    background-color: white;
+    // font-family: Arial, Helvetica, sans-serif;
+    // sita paemiau is VVDG.lt
+    font-family: "Open Sans", sans-serif;
 }
 
 #main-div {
     display: grid;
     place-items: center;
+
+    #button-div {
+        margin: 0.5rem; // sita nuimt gal reiks
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.25rem;
+
+        #floor1button,
+        #floor2button,
+        #floor3button {
+            background-color: white;
+            font-size: 1rem;
+            padding: 0.5em 1em 0.5em 1em;
+            border: 2px solid $fill;
+            border-radius: 5px; // del sito pagalvot reiktu
+            box-shadow: 0px 0px 4px $fill; // dar su situ pasizaist
+            color: $fill;
+            transition: 0.3s ease;
+
+            &.active,
+            &:hover {
+                background-color: $fill;
+                color: white;
+                cursor: pointer;
+                transform: translateY(-4px);
+            }
+
+            &:active {
+                background-color: $fill;
+                color: white;
+                cursor: pointer;
+                // ties sitais irgi dar galima pagalvot
+                // transform: scale(0.99, 0.99);
+                // transform: translateY(2px);
+                background-color: rgb(115, 89, 187);
+            }
+        }
+    }
+
+    #floor1,
+    #floor2,
+    #floor3 {
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+        background-color: $fill;
+        gap: 1rem;
+        border: 2px solid black;
+        padding: 1rem;
+
+        @media only screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+        #floor1map,
+        #floor2map,
+        #floor3map {
+            border: 2px solid black;
+            max-width: 1000px;
+            min-width: 100px;
+            height: auto;
+            background-color: white;
+        }
+
+        #floor1rooms,
+        #floor2rooms,
+        #floor3rooms {
+            border: 2px solid black;
+            background-color: white;
+        }
+    }
 }
 
 $windowcolor: rgb(235, 235, 235);
+
 #window {
     position: absolute;
     top: 0;

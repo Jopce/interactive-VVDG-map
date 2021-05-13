@@ -5,15 +5,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C700&display=swap&ver=5.5.3" rel="stylesheet"> 
         <script src="index.js"></script>   
         <title>Interactive Map</title>
+        
     </head>
     <body>
         <div id="main-div"> 
-            <div>
-                <button id="floor1button">1</button>
-                <button id="floor2button">2</button>
-                <button id="floor3button">3</button>
+            <div id="button-div">
+                <!-- Nezinau kaip parasyt aukstus, ar det i button ar kur nors kitur ir ar F tiks -->
+                <button id="floor1button"><b>1F</b></button>
+                <button id="floor2button"><b>2F</b></button>
+                <button id="floor3button"><b>3F</b></button>
             </div>
             <div id="floor1">
                 <div id="floor1map">
@@ -624,7 +628,7 @@
                     </svg>
                 </div>
                 <div id="floor2rooms" style="background-color: lightblue">
-                    <ul>
+                    <ul style="font-size: 1.5rem; text-align: center;">
                         <li>1 room</li>
                         <li>2 room</li>
                         <li>3 room</li>
