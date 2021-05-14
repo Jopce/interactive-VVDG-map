@@ -1,4 +1,4 @@
-$fill: rgb(64, 43, 122);
+$vvdg: rgb(64, 43, 122);
 $maphover: rgb(216, 216, 216);
 
 @mixin center {
@@ -38,22 +38,22 @@ polygon.st0:hover {
             background-color: white;
             font-size: 1rem;
             padding: 0.5em 1em 0.5em 1em;
-            border: 2px solid $fill;
+            border: 2px solid $vvdg;
             border-radius: 5px; // del sito pagalvot reiktu
-            box-shadow: 0px 0px 4px $fill; // dar su situ pasizaist
-            color: $fill;
+            box-shadow: 0px 0px 4px $vvdg; // dar su situ pasizaist
+            color: $vvdg;
             transition: 0.3s ease;
 
             &.active,
             &:hover {
-                background-color: $fill;
+                background-color: $vvdg;
                 color: white;
                 cursor: pointer;
                 transform: translateY(-4px);
             }
 
             &:active {
-                background-color: $fill;
+                background-color: $vvdg;
                 color: white;
                 cursor: pointer;
                 // ties sitais irgi dar galima pagalvot
@@ -69,19 +69,18 @@ polygon.st0:hover {
     #floor3 {
         display: grid;
         grid-template-columns: 5fr 2fr;
-        background-color: $fill;
+        background-color: $vvdg;
         gap: 1rem;
-        border: 2px solid black;
         padding: 1rem;
 
         @media only screen and (max-width: 768px) {
             grid-template-columns: 1fr;
+            max-width: 768px;
         }
 
         #floor1map,
         #floor2map,
         #floor3map {
-            border: 2px solid black;
             max-width: 1000px;
             min-width: 100px;
             height: auto;
@@ -91,8 +90,28 @@ polygon.st0:hover {
         #floor1rooms,
         #floor2rooms,
         #floor3rooms {
-            border: 2px solid black;
             background-color: white;
+
+            ul {
+                list-style-type: none;
+
+                button {
+                    font-size: 1.5rem;
+                    padding: none;
+                    margin: 0px 0px 3px 0px;
+                    background-color: rgba(0, 0, 0, 0); // see through
+                    border: none;
+                    color: rgba(0, 0, 0, 0.5);
+
+                    &:hover,
+                    &.active {
+                        cursor: pointer;
+                        border-bottom: 3px solid $vvdg; // ta spalva kurios yra kambarys
+                        margin: 0px 0px 0px 0px;
+                        color: rgba(0, 0, 0, 1);
+                    }
+                }
+            }
         }
     }
 }

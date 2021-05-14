@@ -14,6 +14,26 @@ document.addEventListener("DOMContentLoaded", function () {
         .querySelector("#floor3button")
         .addEventListener("click", () => change_floor("floor3"));
 
+    // pasimeginau padaryt viena mygtuka, kuri paspaudus nusispalvina tas kambarys ir mygtukas tampa active
+    // zinoma cia galima (ir reiks) nemazai pakeist, bet pasiziurejau ar esme sueina
+    // prisiminiau kad chemijos kabas isvis ne 2 aukste bet nesvarbu lol
+    document.querySelector("#chemija").addEventListener("click", () => {
+        console.log("a");
+        document.querySelectorAll(".st0").forEach(function(room) {
+            // cia ziuriu pagal kabo nr, bet reiks ziuret kaip darysim loope
+            if (room.dataset.num == "127") {
+                if (room.style.fill != fillcolor) {
+                    room.style.fill = fillcolor;
+                    document.querySelector("#chemija").classList.add("active")
+                } else {
+                    // nesu tikras ar null tinkamas naudot cia, bet veikia tai gal px lol
+                    room.style.fill = null;
+                    document.querySelector("#chemija").classList.remove("active")
+                }
+            }
+        })
+    })
+
     // by default load 2nd floor
     change_floor("floor2");
 
@@ -42,13 +62,14 @@ function clear_color() {
 
 // change floor, input is floor div id
 function change_floor(floor) {
-    console.log("yay");
+    // change which floor is visible
     document.querySelector("#floor1").style.display = "none";
     document.querySelector("#floor2").style.display = "none";
     document.querySelector("#floor3").style.display = "none";
 
     document.querySelector(`#${floor}`).style.display = "grid";
 
+    // make that floor's button active
     document.querySelector(`#floor1button`).classList.remove("active");
     document.querySelector(`#floor2button`).classList.remove("active");
     document.querySelector(`#floor3button`).classList.remove("active");

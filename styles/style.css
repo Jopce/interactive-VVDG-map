@@ -70,7 +70,6 @@ polygon.st0:hover {
       grid-template-columns: 5fr 2fr;
   background-color: #402b7a;
   gap: 1rem;
-  border: 2px solid black;
   padding: 1rem;
 }
 
@@ -80,6 +79,7 @@ polygon.st0:hover {
   #main-div #floor3 {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    max-width: 768px;
   }
 }
 
@@ -92,7 +92,6 @@ polygon.st0:hover {
 #main-div #floor3 #floor1map,
 #main-div #floor3 #floor2map,
 #main-div #floor3 #floor3map {
-  border: 2px solid black;
   max-width: 1000px;
   min-width: 100px;
   height: auto;
@@ -108,8 +107,59 @@ polygon.st0:hover {
 #main-div #floor3 #floor1rooms,
 #main-div #floor3 #floor2rooms,
 #main-div #floor3 #floor3rooms {
-  border: 2px solid black;
   background-color: white;
+}
+
+#main-div #floor1 #floor1rooms ul,
+#main-div #floor1 #floor2rooms ul,
+#main-div #floor1 #floor3rooms ul,
+#main-div #floor2 #floor1rooms ul,
+#main-div #floor2 #floor2rooms ul,
+#main-div #floor2 #floor3rooms ul,
+#main-div #floor3 #floor1rooms ul,
+#main-div #floor3 #floor2rooms ul,
+#main-div #floor3 #floor3rooms ul {
+  list-style-type: none;
+}
+
+#main-div #floor1 #floor1rooms ul button,
+#main-div #floor1 #floor2rooms ul button,
+#main-div #floor1 #floor3rooms ul button,
+#main-div #floor2 #floor1rooms ul button,
+#main-div #floor2 #floor2rooms ul button,
+#main-div #floor2 #floor3rooms ul button,
+#main-div #floor3 #floor1rooms ul button,
+#main-div #floor3 #floor2rooms ul button,
+#main-div #floor3 #floor3rooms ul button {
+  font-size: 1.5rem;
+  padding: none;
+  margin: 0px 0px 3px 0px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#main-div #floor1 #floor1rooms ul button:hover, #main-div #floor1 #floor1rooms ul button.active,
+#main-div #floor1 #floor2rooms ul button:hover,
+#main-div #floor1 #floor2rooms ul button.active,
+#main-div #floor1 #floor3rooms ul button:hover,
+#main-div #floor1 #floor3rooms ul button.active,
+#main-div #floor2 #floor1rooms ul button:hover,
+#main-div #floor2 #floor1rooms ul button.active,
+#main-div #floor2 #floor2rooms ul button:hover,
+#main-div #floor2 #floor2rooms ul button.active,
+#main-div #floor2 #floor3rooms ul button:hover,
+#main-div #floor2 #floor3rooms ul button.active,
+#main-div #floor3 #floor1rooms ul button:hover,
+#main-div #floor3 #floor1rooms ul button.active,
+#main-div #floor3 #floor2rooms ul button:hover,
+#main-div #floor3 #floor2rooms ul button.active,
+#main-div #floor3 #floor3rooms ul button:hover,
+#main-div #floor3 #floor3rooms ul button.active {
+  cursor: pointer;
+  border-bottom: 3px solid #402b7a;
+  margin: 0px 0px 0px 0px;
+  color: black;
 }
 
 #window {
