@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // pasimeginau padaryt viena mygtuka, kuri paspaudus nusispalvina tas kambarys ir mygtukas tampa active
     // zinoma cia galima (ir reiks) nemazai pakeist, bet pasiziurejau ar esme sueina
-    // prisiminiau kad chemijos kabas isvis ne 2 aukste bet nesvarbu lol
     document.querySelector("#chemija").addEventListener("click", () => {
         console.log("a");
         document.querySelectorAll(".st0").forEach(function(room) {
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function clear_color() {
     document.querySelectorAll(`polygon[style="fill: ${fillcolor};"], path[style="fill: ${fillcolor};"]`).forEach(function(element) {
-        element.removeAttribute("style");
+        element.removeAttribute("style"); // 
     });
 }
 
