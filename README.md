@@ -15,3 +15,5 @@ Aš planuoju daryt dabar, kad galima būtų junginet tarp aukštų tai pranešu,
 2021/05/13 - change floor buttons iš esmės baigti, žinoma dar galima dėl ko nors pasvarstyti, pakeičiau font, paėmiau iš vvdg.lt, scss patvarkiau, dar šen bei ten pakeičiau.
 
 2021/05/14 - šiek tiek pasimėginau su room buttons stiliukais, galimai keisis ten, bet manau šita kryptis yra gan nebloga, pasibandziau, kad paspaudus ant chemijos kabo button nusispalvintu ir kabinetas, tas kodas tikrai prastas, bet esmė veikia ir galbūt bus galima ką nors panaudot.
+
+2021/05/16 - įrašiau kiek prisiminiau kambarių, dar daug liko, bendras vaizdas visai neblogas jau atrodo, reiks dabar prie funkcionalumo sedet lol.
