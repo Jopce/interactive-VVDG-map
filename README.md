@@ -8,7 +8,7 @@ Matai, as kolkas palieku taip, kad galima būtų tęsti darbą. Vėliau turbūt 
 
 Aš planuoju daryt dabar, kad galima būtų junginet tarp aukštų tai pranešu, kad nešvaistyti laiko.
 
-2021/05/12 Darau visų aukštų svg. Tada kad paspaudus ant kambarių jie nusispalvintų išlystų langas be jokio info kolkas. - Viskas done išskyrus 3 auksšto svg
+2021/05/12 Darau visų aukštų svg. Tada kad paspaudus ant kambarių jie nusispalvintų išlystų langas be jokio info kolkas.
 
 2021/05/12 - įmečiau šiek tiek progreso su layout ir jau įdėjau šiek tiek mobile responsive design. Tai dar tik toks ekskizas, bet vaizdas po truputį susidaro.
 
@@ -17,3 +17,5 @@ Aš planuoju daryt dabar, kad galima būtų junginet tarp aukštų tai pranešu,
 2021/05/14 - šiek tiek pasimėginau su room buttons stiliukais, galimai keisis ten, bet manau šita kryptis yra gan nebloga, pasibandziau, kad paspaudus ant chemijos kabo button nusispalvintu ir kabinetas, tas kodas tikrai prastas, bet esmė veikia ir galbūt bus galima ką nors panaudot.
 
 2021/05/16 - įrašiau kiek prisiminiau kambarių, dar daug liko, bendras vaizdas visai neblogas jau atrodo, reiks dabar prie funkcionalumo sedet lol.
+
+2021/05/18 - Yra visi svg ir mini animationas, kai langas is kairės išlenda.
