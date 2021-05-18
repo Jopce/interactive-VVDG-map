@@ -170,8 +170,37 @@ polygon.st0:hover {
   color: black;
 }
 
+@-webkit-keyframes slide {
+  from {
+    margin-left: -20%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes slide {
+  from {
+    margin-left: -20%;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
 #window {
+  -webkit-animation-name: slide;
+          animation-name: slide;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   display: none;

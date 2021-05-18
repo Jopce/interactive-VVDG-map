@@ -90,11 +90,13 @@ function info(name, num, desc, path) {
     if (num !== undefined) {numtag.textContent = `Nr. - ${num}`;} else {numtag.textContent = "";}
     if (desc !== undefined) {desctag.textContent = desc;} else {desctag.textContent = "Aprašymo nėra"}
     if (path === undefined) {imgtag.style.display = "none"} else {imgtag.src = path; imgtag.style.display = "inline"}
+
+    infowindow.style.animationPlayState = "running"
 }
 
 function close() {
-    infowindow = document.querySelector("#window")
-    //hide window
+    infowindow = document.querySelector("#window");
+    //https://morioh.com/p/b7a04514a637
     infowindow.removeAttribute("style")
 
     clear_color();
