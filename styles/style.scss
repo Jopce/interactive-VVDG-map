@@ -17,8 +17,6 @@ polygon.st0:hover {
 
 * {
     box-sizing: border-box;
-    // font-family: Arial, Helvetica, sans-serif;
-    // sita paemiau is VVDG.lt - ok
     font-family: "Open Sans", sans-serif;
 }
 
@@ -43,16 +41,20 @@ body {
 #main-div {
     display: flex;
     flex-wrap: wrap;
+    padding: 0 1rem 0 1rem;
 
     // sita patvarkyt
     #map {
+        padding: 1rem;
         flex: 1 1 80%;
         display: grid;
         place-items: center;
+
         svg {
             // cia reiktu pasiziuret dar
-            max-width: 2000px;
-            min-width: 100px;
+            // https://stackoverflow.com/questions/5321984/chrome-not-showing-a-svg-file
+            // lol per chrome nerodo vps, planuoju taisyt
+            max-width: 100%;
             height: auto;
         }
     }
@@ -60,10 +62,13 @@ body {
     #sidebar {
         flex: 1 1 20%;
         text-align: center;
+        // dar pasiziuret gal pakeist i position: fixed
         position: sticky;
+        // cia yra calc(vvdg navbar height + 1rem)
         top: calc(120px + 1rem);
-        height: calc(100vh - 140px);
-        overflow-y: auto;
+        // cia 140px yra navbar height + savo dadetas plotelis
+        height: calc(100vh - 150px);
+        // overflow-y: auto;
         z-index: 2;
         background-color: white;
         text-align: center;
@@ -72,15 +77,18 @@ body {
         border-radius: 5px;
         box-shadow: 0px 0px 4px $vvdg;
 
-        @media only screen and (max-width: 768px) {
-            grid-template-columns: 1fr;
-            max-width: 768px;
-            min-width: 200px;
-            margin: 1rem;
-        }
+        min-width: 250px;
+
+        // @media only screen and (max-width: 768px) {
+        //     grid-template-columns: 1fr;
+        //     max-width: 768px;
+        //     min-width: 200px;
+        //     margin: 1rem;
+        // }
 
         #changefloor {
             padding: 1rem;
+            height: 10%;
             position: sticky;
             top: 0;
             border-bottom: 2px solid $vvdg;
@@ -120,6 +128,8 @@ body {
         }
 
         #rooms {
+            max-height: calc(100vh - 140px - 12%);
+            overflow-y: auto;
             #floor1rooms,
             #floor2rooms,
             #floor3rooms {
