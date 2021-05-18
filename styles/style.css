@@ -285,7 +285,8 @@ polygon.st0:hover {
     display: -ms-flexbox;
     display: flex;
   }
-  html, body {
+  html,
+  body {
     margin: 0;
     height: 100%;
     overflow: hidden;

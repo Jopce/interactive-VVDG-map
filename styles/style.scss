@@ -206,12 +206,16 @@ $windowcolor: rgb(235, 235, 235);
             height: auto;
         }
     }
-
 }
 
-@media screen and (orientation:portrait) {
+@media screen and (orientation: portrait) {
     #rotate {
         display: flex;
     }
-    html, body {margin: 0; height: 100%; overflow: hidden}
+    html,
+    body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+    }
 }
