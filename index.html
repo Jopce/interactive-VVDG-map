@@ -12,14 +12,12 @@
         
     </head>
     <body>
+        <div id="navbar">
+            vvdg.lt turi sticky navbar tai galvojau kad mums reiktu i ta atsizvelgti <br>
+            tikslaus height nzn bet cia tiesiog ekspermentuot
+        </div>
         <div id="main-div"> 
-            <div id="button-div">
-                <!-- Nezinau kaip parasyt aukstus, ar det i button ar kur nors kitur ir ar F tiks -->
-                <button id="floor1button"><b>1F</b></button>
-                <button id="floor2button"><b>2F</b></button>
-                <button id="floor3button"><b>3F</b></button>
-            </div>
-            <div id="floor1">
+            <div id="map">
                 <div id="floor1map">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 2117.97 1697.69" style="enable-background:new 0 0 2117.97 1697.69;" xml:space="preserve">
@@ -323,23 +321,6 @@
                     </g>
                     </svg>
                 </div>
-                <div id="floor1rooms">
-                    <ul>
-                        <li><button>Kavinė/Valgykla</button></li>
-                        <li><button>Vaikinų spintelės</button></li>
-                        <li><button>Merginų spintelės</button></li>
-                        <li><button>Vaikinų spintelės</button></li>
-                        <li><button>Vidinis kiemas</button></li>
-                        <li><button>Biblioteka/Skaitykla</button></li>
-                        <li><button>IT kabinetas</button></li>
-                        <li><button>Dailės kabinetas</button></li>
-                        <li><button id="chemija">Chemijos kabinetas</button></li>
-                        <li><button>Etikos kabinetas(?)</button></li>
-                        <li><button>.....</button></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="floor2">
                 <div id="floor2map">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 2186.84 1769.69" style="enable-background:new 0 0 2186.84 1769.69;" xml:space="preserve">
@@ -650,27 +631,6 @@
                     </g>
                     </svg>
                 </div>
-                <div id="floor2rooms">
-                    <ul>
-                        <li><button>Įėjimas</button></li>
-                        <li><button>Sporto salė</button></li>
-                        <li><button>Vaikinų rūbinė</button></li>
-                        <li><button>Merginų rūbinė</button></li>
-                        <li><button>Šokių salė</button></li>
-                        <li><button>Budėtoja</button></li>
-                        <li><button>Didžioji(?) salė</button></li>
-                        <li><button>Vaikinų tualetas</button></li>
-                        <li><button>Merginų tualetas</button></li>
-                        <li><button>Akvariumas(?)</button></li>
-                        <li><button>Matematikos kabinetas</button></li>
-                        <li><button>Geografijos kabinetas</button></li>
-                        <li><button>Fizikos kabinetas</button></li>
-                        <li><button>Istorijos kabinetas(?)</button></li>
-                        <li><button>.....</button></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="floor3">
                 <div id="floor3map">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 2159.39 1967.36" style="enable-background:new 0 0 2159.39 1967.36;" xml:space="preserve">
@@ -856,18 +816,86 @@
                     </g>
                     </svg>
                 </div>
-                <div id="floor3rooms">
-                    <ul>
-                        <li><button>Biologijos kabinetas</button></li>
-                        <li><button>Muzikos kabinetas</button></li>
-                        <li><button>Lietuvių kalbos kabinetas</button></li>
-                        <li><button>Mokytojų tualetai</button></li>
-                        <li><button>Šachmatai kur yra</button></li>
-                        <li><button>.....</button></li>
-                    </ul>
+            </div>
+            <div id="sidebar">
+                <div id="changefloor">
+                    <button id="floor1button"><b>1F</b></button>
+                    <button id="floor2button"><b>2F</b></button>
+                    <button id="floor3button"><b>3F</b></button>
+                </div>
+                <div id="rooms">
+                    <div id="floor1rooms">
+                        <ul>
+                            <li><button>Kavinė/Valgykla</button></li>
+                            <li><button>Vaikinų spintelės</button></li>
+                            <li><button>Merginų spintelės</button></li>
+                            <li><button>Vaikinų spintelės</button></li>
+                            <li><button>Vidinis kiemas</button></li>
+                            <li><button>Biblioteka/Skaitykla</button></li>
+                            <li><button>IT kabinetas</button></li>
+                            <li><button>Dailės kabinetas</button></li>
+                            <li><button id="chemija">Chemijos kabinetas</button></li>
+                            <li><button>Etikos kabinetas(?)</button></li>
+                            <li><button>.....</button></li>
+                        </ul>
+                    </div>
+                    <div id="floor2rooms">
+                        <ul>
+                            <li><button>Įėjimas</button></li>
+                            <li><button>Sporto salė</button></li>
+                            <li><button>Vaikinų rūbinė</button></li>
+                            <li><button>Merginų rūbinė</button></li>
+                            <li><button>Šokių salė</button></li>
+                            <li><button>Budėtoja</button></li>
+                            <li><button>Didžioji(?) salė</button></li>
+                            <li><button>Vaikinų tualetas</button></li>
+                            <li><button>Merginų tualetas</button></li>
+                            <li><button>Akvariumas(?)</button></li>
+                            <li><button>Matematikos kabinetas</button></li>
+                            <li><button>Geografijos kabinetas</button></li>
+                            <li><button>Fizikos kabinetas</button></li>
+                            <li><button>Istorijos kabinetas(?)</button></li>
+                            <li><button>.....</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                        </ul>
+                    </div>
+                    <div id="floor3rooms">
+                        <ul>
+                            <li><button>Biologijos kabinetas</button></li>
+                            <li><button>Muzikos kabinetas</button></li>
+                            <li><button>Lietuvių kalbos kabinetas</button></li>
+                            <li><button>Mokytojų tualetai</button></li>
+                            <li><button>Šachmatai kur yra</button></li>
+                            <li><button>.....</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                            <li><button>daug kambariu</button></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- galbut sita reiktu idet i main-div -->
         <div id="window">
             <div class="info">
                 <img class="foto" src="/" alt="Nuotraukos Nėra">

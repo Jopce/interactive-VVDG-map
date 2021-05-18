@@ -61,12 +61,19 @@ function clear_color() {
 
 // change floor, input is floor div id
 function change_floor(floor) {
-    // change which floor is visible
-    document.querySelector("#floor1").style.display = "none";
-    document.querySelector("#floor2").style.display = "none";
-    document.querySelector("#floor3").style.display = "none";
+    // change which floor's map is visible
+    document.querySelector("#floor1map").style.display = "none";
+    document.querySelector("#floor2map").style.display = "none";
+    document.querySelector("#floor3map").style.display = "none";
 
-    document.querySelector(`#${floor}`).style.display = "grid";
+    document.querySelector(`#${floor}map`).style.display = "block";
+
+    // change which floor's rooms are visible
+    document.querySelector("#floor1rooms").style.display = "none";
+    document.querySelector("#floor2rooms").style.display = "none";
+    document.querySelector("#floor3rooms").style.display = "none";
+
+    document.querySelector(`#${floor}rooms`).style.display = "block";
 
     // make that floor's button active
     document.querySelector(`#floor1button`).classList.remove("active");
