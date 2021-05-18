@@ -19,3 +19,5 @@ Aš planuoju daryt dabar, kad galima būtų junginet tarp aukštų tai pranešu,
 2021/05/16 - įrašiau kiek prisiminiau kambarių, dar daug liko, bendras vaizdas visai neblogas jau atrodo, reiks dabar prie funkcionalumo sedet lol.
 
 2021/05/18 - Yra visi svg, mini animationas, kai langas is kairės išlenda ir "rotate phone".
+
+2021/05/18 - perdariau visa layout, dar yra kur paziuret reiks, responsive design dar patobulint ir per chrome nerodo, tai teks taisyt. 
