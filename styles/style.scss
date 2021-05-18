@@ -22,107 +22,234 @@ polygon.st0:hover {
     font-family: "Open Sans", sans-serif;
 }
 
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#navbar {
+    height: 120px;
+    width: 100%;
+    background-color: $vvdg;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    color: white;
+    margin: 0;
+    margin-bottom: 1rem;
+    z-index: 1;
+}
+
 #main-div {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-wrap: wrap;
 
-    #button-div {
+    // sita patvarkyt
+    #map {
+        flex: 1 1 80%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0.25rem;
-
-        #floor1button,
-        #floor2button,
-        #floor3button {
-            background-color: white;
-            font-size: 1rem;
-            padding: 0.5em 1em 0.5em 1em;
-            border: 2px solid $vvdg;
-            border-radius: 5px; // del sito pagalvot reiktu
-            box-shadow: 0px 0px 4px $vvdg; // dar su situ pasizaist
-            color: $vvdg;
-            transition: 0.3s ease;
-
-            &.active,
-            &:hover {
-                background-color: $vvdg;
-                color: white;
-                cursor: pointer;
-                transform: translateY(-4px);
-            }
-
-            &:active {
-                background-color: $vvdg;
-                color: white;
-                cursor: pointer;
-                // ties sitais irgi dar galima pagalvot
-                // transform: scale(0.99, 0.99);
-                // transform: translateY(2px);
-                background-color: rgb(115, 89, 187);
-            }
+        place-items: center;
+        svg {
+            // cia reiktu pasiziuret dar
+            max-width: 2000px;
+            min-width: 100px;
+            height: auto;
         }
     }
 
-    #floor1,
-    #floor2,
-    #floor3 {
-        display: grid;
-        grid-template-columns: 5fr 2fr;
-        gap: 1rem;
-        padding: 1rem;
+    #sidebar {
+        flex: 1 1 20%;
+        text-align: center;
+        position: sticky;
+        top: calc(120px + 1rem);
+        height: calc(100vh - 140px);
+        overflow-y: auto;
+        z-index: 2;
+        background-color: white;
+        text-align: center;
+        //pasiziuret dar del situ
+        border: 2px solid $vvdg;
+        border-radius: 5px;
+        box-shadow: 0px 0px 4px $vvdg;
 
         @media only screen and (max-width: 768px) {
             grid-template-columns: 1fr;
             max-width: 768px;
+            min-width: 200px;
+            margin: 1rem;
         }
 
-        #floor1map,
-        #floor2map,
-        #floor3map {
-            max-width: 1000px;
-            min-width: 100px;
-            height: auto;
+        #changefloor {
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            border-bottom: 2px solid $vvdg;
             background-color: white;
-            // pasiziuret dar del situ
-            border: 2px solid $vvdg;
-            border-radius: 5px;
             box-shadow: 0px 0px 4px $vvdg;
+
+            #floor1button,
+            #floor2button,
+            #floor3button {
+                background-color: white;
+                font-size: 1rem;
+                padding: 0.5em 1em 0.5em 1em;
+                border: 2px solid $vvdg;
+                border-radius: 5px; // del sito pagalvot reiktu
+                box-shadow: 0px 0px 4px $vvdg; // dar su situ pasizaist
+                color: $vvdg;
+                transition: 0.3s ease;
+
+                &.active,
+                &:hover {
+                    background-color: $vvdg;
+                    color: white;
+                    cursor: pointer;
+                    transform: translateY(-4px);
+                }
+
+                &:active {
+                    background-color: $vvdg;
+                    color: white;
+                    cursor: pointer;
+                    // ties sitais irgi dar galima pagalvot
+                    // transform: scale(0.99, 0.99);
+                    // transform: translateY(2px);
+                    background-color: rgb(115, 89, 187);
+                }
+            }
         }
 
-        #floor1rooms,
-        #floor2rooms,
-        #floor3rooms {
-            background-color: white;
-            text-align: center;
-            //pasiziuret dar del situ
-            border: 2px solid $vvdg;
-            border-radius: 5px;
-            box-shadow: 0px 0px 4px $vvdg;
+        #rooms {
+            #floor1rooms,
+            #floor2rooms,
+            #floor3rooms {
+                ul {
+                    list-style-type: none;
+                    padding: 0px;
 
-            ul {
-                list-style-type: none;
-                padding: 0px;
+                    button {
+                        font-size: 1.5rem;
+                        padding: none;
+                        margin: 0px 0px 3px 0px;
+                        background-color: rgba(0, 0, 0, 0); // see through
+                        border: none;
+                        color: rgba(0, 0, 0, 0.5);
 
-                button {
-                    font-size: 1.5rem;
-                    padding: none;
-                    margin: 0px 0px 3px 0px;
-                    background-color: rgba(0, 0, 0, 0); // see through
-                    border: none;
-                    color: rgba(0, 0, 0, 0.5);
-
-                    &:hover,
-                    &.active {
-                        cursor: pointer;
-                        border-bottom: 3px solid $vvdg; // ta spalva kurios yra kambarys
-                        margin: 0px 0px 0px 0px;
-                        color: rgba(0, 0, 0, 1);
+                        &:hover,
+                        &.active {
+                            cursor: pointer;
+                            border-bottom: 3px solid $vvdg; // ta spalva kurios yra kambarys
+                            margin: 0px 0px 0px 0px;
+                            color: rgba(0, 0, 0, 1);
+                        }
                     }
                 }
             }
         }
     }
 }
+
+// #main-div {
+//     display: grid;
+//     place-items: center;
+
+//     #button-div {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr 1fr;
+//         gap: 0.25rem;
+
+//         #floor1button,
+//         #floor2button,
+//         #floor3button {
+//             background-color: white;
+//             font-size: 1rem;
+//             padding: 0.5em 1em 0.5em 1em;
+//             border: 2px solid $vvdg;
+//             border-radius: 5px; // del sito pagalvot reiktu
+//             box-shadow: 0px 0px 4px $vvdg; // dar su situ pasizaist
+//             color: $vvdg;
+//             transition: 0.3s ease;
+
+//             &.active,
+//             &:hover {
+//                 background-color: $vvdg;
+//                 color: white;
+//                 cursor: pointer;
+//                 transform: translateY(-4px);
+//             }
+
+//             &:active {
+//                 background-color: $vvdg;
+//                 color: white;
+//                 cursor: pointer;
+//                 // ties sitais irgi dar galima pagalvot
+//                 // transform: scale(0.99, 0.99);
+//                 // transform: translateY(2px);
+//                 background-color: rgb(115, 89, 187);
+//             }
+//         }
+//     }
+
+//     #floor1,
+//     #floor2,
+//     #floor3 {
+//         display: grid;
+//         grid-template-columns: 5fr 2fr;
+//         gap: 1rem;
+//         padding: 1rem;
+
+//         @media only screen and (max-width: 768px) {
+//             grid-template-columns: 1fr;
+//             max-width: 768px;
+//         }
+
+//         #floor1map,
+//         #floor2map,
+//         #floor3map {
+//             max-width: 1000px;
+//             min-width: 100px;
+//             height: auto;
+//             background-color: white;
+//             // pasiziuret dar del situ
+//             border: 2px solid $vvdg;
+//             border-radius: 5px;
+//             box-shadow: 0px 0px 4px $vvdg;
+//         }
+
+//         #floor1rooms,
+//         #floor2rooms,
+//         #floor3rooms {
+//             background-color: white;
+//             text-align: center;
+//             //pasiziuret dar del situ
+//             border: 2px solid $vvdg;
+//             border-radius: 5px;
+//             box-shadow: 0px 0px 4px $vvdg;
+
+//             ul {
+//                 list-style-type: none;
+//                 padding: 0px;
+
+//                 button {
+//                     font-size: 1.5rem;
+//                     padding: none;
+//                     margin: 0px 0px 3px 0px;
+//                     background-color: rgba(0, 0, 0, 0); // see through
+//                     border: none;
+//                     color: rgba(0, 0, 0, 0.5);
+
+//                     &:hover,
+//                     &.active {
+//                         cursor: pointer;
+//                         border-bottom: 3px solid $vvdg; // ta spalva kurios yra kambarys
+//                         margin: 0px 0px 0px 0px;
+//                         color: rgba(0, 0, 0, 1);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 $windowcolor: rgb(235, 235, 235);
 

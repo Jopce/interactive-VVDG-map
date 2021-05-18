@@ -10,23 +10,91 @@ polygon.st0:hover {
   font-family: "Open Sans", sans-serif;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#navbar {
+  height: 120px;
+  width: 100%;
+  background-color: #402b7a;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  color: white;
+  margin: 0;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
 #main-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#main-div #map {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80%;
+          flex: 1 1 80%;
   display: -ms-grid;
   display: grid;
   place-items: center;
 }
 
-#main-div #button-div {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.25rem;
+#main-div #map svg {
+  max-width: 2000px;
+  min-width: 100px;
+  height: auto;
 }
 
-#main-div #button-div #floor1button,
-#main-div #button-div #floor2button,
-#main-div #button-div #floor3button {
+#main-div #sidebar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc(120px + 1rem);
+  height: calc(100vh - 140px);
+  overflow-y: auto;
+  z-index: 2;
+  background-color: white;
+  text-align: center;
+  border: 2px solid #402b7a;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 4px #402b7a;
+          box-shadow: 0px 0px 4px #402b7a;
+}
+
+@media only screen and (max-width: 768px) {
+  #main-div #sidebar {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    max-width: 768px;
+    min-width: 200px;
+    margin: 1rem;
+  }
+}
+
+#main-div #sidebar #changefloor {
+  padding: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #402b7a;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 4px #402b7a;
+          box-shadow: 0px 0px 4px #402b7a;
+}
+
+#main-div #sidebar #changefloor #floor1button,
+#main-div #sidebar #changefloor #floor2button,
+#main-div #sidebar #changefloor #floor3button {
   background-color: white;
   font-size: 1rem;
   padding: 0.5em 1em 0.5em 1em;
@@ -39,11 +107,11 @@ polygon.st0:hover {
   transition: 0.3s ease;
 }
 
-#main-div #button-div #floor1button.active, #main-div #button-div #floor1button:hover,
-#main-div #button-div #floor2button.active,
-#main-div #button-div #floor2button:hover,
-#main-div #button-div #floor3button.active,
-#main-div #button-div #floor3button:hover {
+#main-div #sidebar #changefloor #floor1button.active, #main-div #sidebar #changefloor #floor1button:hover,
+#main-div #sidebar #changefloor #floor2button.active,
+#main-div #sidebar #changefloor #floor2button:hover,
+#main-div #sidebar #changefloor #floor3button.active,
+#main-div #sidebar #changefloor #floor3button:hover {
   background-color: #402b7a;
   color: white;
   cursor: pointer;
@@ -51,94 +119,25 @@ polygon.st0:hover {
           transform: translateY(-4px);
 }
 
-#main-div #button-div #floor1button:active,
-#main-div #button-div #floor2button:active,
-#main-div #button-div #floor3button:active {
+#main-div #sidebar #changefloor #floor1button:active,
+#main-div #sidebar #changefloor #floor2button:active,
+#main-div #sidebar #changefloor #floor3button:active {
   background-color: #402b7a;
   color: white;
   cursor: pointer;
   background-color: #7359bb;
 }
 
-#main-div #floor1,
-#main-div #floor2,
-#main-div #floor3 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 5fr 2fr;
-      grid-template-columns: 5fr 2fr;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-@media only screen and (max-width: 768px) {
-  #main-div #floor1,
-  #main-div #floor2,
-  #main-div #floor3 {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    max-width: 768px;
-  }
-}
-
-#main-div #floor1 #floor1map,
-#main-div #floor1 #floor2map,
-#main-div #floor1 #floor3map,
-#main-div #floor2 #floor1map,
-#main-div #floor2 #floor2map,
-#main-div #floor2 #floor3map,
-#main-div #floor3 #floor1map,
-#main-div #floor3 #floor2map,
-#main-div #floor3 #floor3map {
-  max-width: 1000px;
-  min-width: 100px;
-  height: auto;
-  background-color: white;
-  border: 2px solid #402b7a;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 4px #402b7a;
-          box-shadow: 0px 0px 4px #402b7a;
-}
-
-#main-div #floor1 #floor1rooms,
-#main-div #floor1 #floor2rooms,
-#main-div #floor1 #floor3rooms,
-#main-div #floor2 #floor1rooms,
-#main-div #floor2 #floor2rooms,
-#main-div #floor2 #floor3rooms,
-#main-div #floor3 #floor1rooms,
-#main-div #floor3 #floor2rooms,
-#main-div #floor3 #floor3rooms {
-  background-color: white;
-  text-align: center;
-  border: 2px solid #402b7a;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 4px #402b7a;
-          box-shadow: 0px 0px 4px #402b7a;
-}
-
-#main-div #floor1 #floor1rooms ul,
-#main-div #floor1 #floor2rooms ul,
-#main-div #floor1 #floor3rooms ul,
-#main-div #floor2 #floor1rooms ul,
-#main-div #floor2 #floor2rooms ul,
-#main-div #floor2 #floor3rooms ul,
-#main-div #floor3 #floor1rooms ul,
-#main-div #floor3 #floor2rooms ul,
-#main-div #floor3 #floor3rooms ul {
+#main-div #sidebar #rooms #floor1rooms ul,
+#main-div #sidebar #rooms #floor2rooms ul,
+#main-div #sidebar #rooms #floor3rooms ul {
   list-style-type: none;
   padding: 0px;
 }
 
-#main-div #floor1 #floor1rooms ul button,
-#main-div #floor1 #floor2rooms ul button,
-#main-div #floor1 #floor3rooms ul button,
-#main-div #floor2 #floor1rooms ul button,
-#main-div #floor2 #floor2rooms ul button,
-#main-div #floor2 #floor3rooms ul button,
-#main-div #floor3 #floor1rooms ul button,
-#main-div #floor3 #floor2rooms ul button,
-#main-div #floor3 #floor3rooms ul button {
+#main-div #sidebar #rooms #floor1rooms ul button,
+#main-div #sidebar #rooms #floor2rooms ul button,
+#main-div #sidebar #rooms #floor3rooms ul button {
   font-size: 1.5rem;
   padding: none;
   margin: 0px 0px 3px 0px;
@@ -147,23 +146,11 @@ polygon.st0:hover {
   color: rgba(0, 0, 0, 0.5);
 }
 
-#main-div #floor1 #floor1rooms ul button:hover, #main-div #floor1 #floor1rooms ul button.active,
-#main-div #floor1 #floor2rooms ul button:hover,
-#main-div #floor1 #floor2rooms ul button.active,
-#main-div #floor1 #floor3rooms ul button:hover,
-#main-div #floor1 #floor3rooms ul button.active,
-#main-div #floor2 #floor1rooms ul button:hover,
-#main-div #floor2 #floor1rooms ul button.active,
-#main-div #floor2 #floor2rooms ul button:hover,
-#main-div #floor2 #floor2rooms ul button.active,
-#main-div #floor2 #floor3rooms ul button:hover,
-#main-div #floor2 #floor3rooms ul button.active,
-#main-div #floor3 #floor1rooms ul button:hover,
-#main-div #floor3 #floor1rooms ul button.active,
-#main-div #floor3 #floor2rooms ul button:hover,
-#main-div #floor3 #floor2rooms ul button.active,
-#main-div #floor3 #floor3rooms ul button:hover,
-#main-div #floor3 #floor3rooms ul button.active {
+#main-div #sidebar #rooms #floor1rooms ul button:hover, #main-div #sidebar #rooms #floor1rooms ul button.active,
+#main-div #sidebar #rooms #floor2rooms ul button:hover,
+#main-div #sidebar #rooms #floor2rooms ul button.active,
+#main-div #sidebar #rooms #floor3rooms ul button:hover,
+#main-div #sidebar #rooms #floor3rooms ul button.active {
   cursor: pointer;
   border-bottom: 3px solid #402b7a;
   margin: 0px 0px 0px 0px;
