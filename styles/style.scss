@@ -1,5 +1,6 @@
 $vvdg: rgb(64, 43, 122);
 $maphover: rgb(216, 216, 216);
+$windowcolor: rgba(235, 235, 235, 0.97);
 
 @mixin center {
     display: flex;
@@ -38,6 +39,58 @@ body {
     z-index: 1;
 }
 
+#window {
+    flex: 1 1 10%;
+    animation: slide 0.3s ease-in paused;
+    position: sticky;
+    z-index: 3;
+    // cia pazet dar
+    top: 140px;
+    height: 80vh;
+    display: none;
+    border: 2px solid $vvdg;
+    background-color: $windowcolor;
+
+    .info {
+        padding: 10px;
+        text-align: center;
+
+        .foto {
+            width: 80%;
+            height: auto;
+        }
+
+        button {
+            float: right;
+            text-align: right;
+            padding: 2px 2px 0 2px;
+            background-color: $windowcolor;
+            border: none;
+            border-radius: 10px;
+
+            &:hover {
+                background-color: rgb(207, 207, 207);
+                cursor: pointer;
+            }
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+
+        h6 {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
 #main-div {
     display: flex;
     flex-wrap: wrap;
@@ -46,10 +99,9 @@ body {
     // sita patvarkyt
     #map {
         padding: 1rem;
-        flex: 1 1 80%;
+        flex: 1 1 70%;
         display: grid;
         place-items: center;
-
         svg {
             // cia reiktu pasiziuret dar
             // https://stackoverflow.com/questions/5321984/chrome-not-showing-a-svg-file
@@ -60,7 +112,7 @@ body {
     }
 
     #sidebar {
-        flex: 1 1 20%;
+        flex: 0 1 20%;
         text-align: center;
         // dar pasiziuret gal pakeist i position: fixed
         position: sticky;
@@ -159,61 +211,12 @@ body {
     }
 }
 
-$windowcolor: rgb(235, 235, 235);
-
 @keyframes slide {
     from {
         margin-left: -20%;
     }
     to {
         margin-left: 0;
-    }
-}
-
-#window {
-    animation-name: slide;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in;
-    animation-play-state: paused;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    display: none;
-    width: 20%;
-    height: 100%;
-    border-right: 1px solid rgb(150, 150, 150);
-    background-color: $windowcolor;
-    .info {
-        padding: 10px;
-        text-align: center;
-        .foto {
-            width: 80%;
-            height: auto;
-        }
-        button {
-            float: right;
-            text-align: right;
-            padding: 2px 2px 0 2px;
-            background-color: $windowcolor;
-            border: none;
-            border-radius: 10px;
-            &:hover {
-                background-color: rgb(207, 207, 207);
-            }
-            img {
-                width: 24px;
-                height: 24px;
-            }
-        }
-        h3 {
-            margin-top: 30px;
-            margin-bottom: 0;
-        }
-        h6 {
-            margin-top: 5px;
-            margin-bottom: 10px;
-        }
     }
 }
 
@@ -246,6 +249,7 @@ $windowcolor: rgb(235, 235, 235);
 @media screen and (orientation: portrait) {
     #rotate {
         display: flex;
+        z-index: 5;
     }
     html,
     body {
