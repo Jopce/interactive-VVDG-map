@@ -39,67 +39,69 @@ body {
     z-index: 1;
 }
 
-#window {
-    flex: 1 1 10%;
-    animation: slide 0.3s ease-in paused;
-    position: sticky;
-    z-index: 3;
-    // cia pazet dar
-    top: 140px;
-    height: 80vh;
-    display: none;
-    border: 2px solid $vvdg;
-    background-color: $windowcolor;
-
-    .info {
-        padding: 10px;
-        text-align: center;
-
-        .foto {
-            width: 80%;
-            height: auto;
-        }
-
-        button {
-            float: right;
-            text-align: right;
-            padding: 2px 2px 0 2px;
-            background-color: $windowcolor;
-            border: none;
-            border-radius: 10px;
-
-            &:hover {
-                background-color: rgb(207, 207, 207);
-                cursor: pointer;
-            }
-
-            img {
-                width: 24px;
-                height: 24px;
-            }
-        }
-
-        h3 {
-            margin-top: 30px;
-            margin-bottom: 0;
-        }
-
-        h6 {
-            margin-top: 5px;
-            margin-bottom: 10px;
-        }
-    }
-}
-
 #main-div {
     display: flex;
     flex-wrap: wrap;
     padding: 0 1rem 0 1rem;
 
+    #window {
+        flex: 0 1 15%;
+        animation: slide 0.3s ease-in paused;
+        position: sticky;
+        z-index: 3;
+        // cia pazet dar
+        top: 140px;
+        height: fit-content;
+        max-height: 80vh;
+        display: block;
+        border: 2px solid $vvdg;
+        background-color: $windowcolor;
+
+        .info {
+            padding: 10px;
+            text-align: center;
+
+            .foto {
+                width: 80%;
+                height: auto;
+            }
+
+            button {
+                float: right;
+                text-align: right;
+                padding: 2px 2px 0 2px;
+                background-color: $windowcolor;
+                border: none;
+                border-radius: 10px;
+
+                &:hover {
+                    background-color: rgb(207, 207, 207);
+                    cursor: pointer;
+                }
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            h3 {
+                margin-top: 15px;
+                margin-bottom: 0;
+            }
+
+            h6 {
+                margin-top: 5px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
     // sita patvarkyt
     #map {
         padding: 1rem;
-        flex: 1 1 70%;
+        left: 100px;
+        flex: 1 1 50%;
         display: grid;
         place-items: center;
         svg {
@@ -211,14 +213,14 @@ body {
     }
 }
 
-@keyframes slide {
-    from {
-        margin-left: -20%;
-    }
-    to {
-        margin-left: 0;
-    }
-}
+// @keyframes slide {
+//     from {
+//         margin-left: -20%;
+//     }
+//     to {
+//         margin-left: 0;
+//     }
+// }
 
 #rotate {
     display: none;
