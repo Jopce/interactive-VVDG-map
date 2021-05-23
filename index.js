@@ -14,49 +14,55 @@ document.addEventListener("DOMContentLoaded", function () {
         .querySelector("#floor3button")
         .addEventListener("click", () => change_floor("floor3"));
 
-    // pasimeginau padaryt viena mygtuka, kuri paspaudus nusispalvina tas kambarys ir mygtukas tampa active
-    // zinoma cia galima (ir reiks) nemazai pakeist, bet pasiziurejau ar esme sueina
-    // document.querySelector("#chemija").addEventListener("click", () => {
-    //     console.log("a");
-    //     document.querySelectorAll(".st0").forEach(function(room) {
-    //         // cia ziuriu pagal kabo nr, bet reiks ziuret kaip darysim loope
-    //         if (room.dataset.num == "127") {
-    //             if (room.style.fill != fillcolor) {
-    //                 room.style.fill = fillcolor;
-    //                 document.querySelector("#chemija").classList.add("active")
-    //             } else {
-    //                 // nesu tikras ar null tinkamas naudot cia, bet veikia tai gal px lol
-    //                 room.style.fill = null;
-    //                 document.querySelector("#chemija").classList.remove("active")
-    //             }
-    //         }
-    //     })
-    // })
-
     // by default load 2nd floor
     change_floor("floor2");
 
+
+    //user clicked on list item
+    document.querySelector("#rooms").querySelectorAll("li").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            const ID = this.dataset.id;
+            const room = document.querySelector(`polygon[data-id="${ID}"], path[data-id="${ID}"]`);
+            const data = room.dataset;
+            if (room.style.fill !== fillcolor) {
+                this.firstElementChild.classList.add("active");
+                info(data.name, data.num, data.desc, data.path);
+                room.style.fill = fillcolor;
+            } else {
+                this.firstElementChild.classList.remove("active");
+                close();
+            }
+        });
+    })
+
     document.querySelector("#close").addEventListener("click", () => close())
-
-    //change color and window pop up
+    //user cliked on map
     document.querySelectorAll(".st0").forEach(function(room) {
-        //room.addEventListener("click", () => info(this.dataset.name)) neveikia
-        room.onclick = function(event) {
+        room.addEventListener("click", function() {
             clear_color();
+            const data = this.dataset;
 
-            const data = event.target.dataset;
+            //listas denej
+            let listitem = document.querySelector(`li[data-id="${data.id}"]`)
+            if (listitem !== null) {
+                listitem.firstElementChild.classList.add("active")
+            }
             //create a window on the left with collected data from the dataset
             info(data.name, data.num, data.desc, data.path);
 
-            event.target.style.fill = fillcolor;
-        }
+            this.style.fill = fillcolor;
+        });
     })
-
 });
 
 function clear_color() {
+    //map color
     document.querySelectorAll(`polygon[style="fill: ${fillcolor};"], path[style="fill: ${fillcolor};"]`).forEach(function(element) {
-        element.removeAttribute("style"); // 
+        element.removeAttribute("style");
+    });
+    //list item color
+    document.querySelectorAll('li > button.active').forEach(function(element) {
+        element.classList.remove("active");
     });
 }
 

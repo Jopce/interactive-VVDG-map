@@ -21,3 +21,5 @@ Aš planuoju daryt dabar, kad galima būtų junginet tarp aukštų tai pranešu,
 2021/05/18 - Yra visi svg, mini animationas, kai langas is kairės išlenda ir "rotate phone".
 
 2021/05/18 - perdariau visa layout, dar yra kur paziuret reiks, responsive design dar patobulint ir per chrome nerodo, tai teks taisyt. 
+
+2021/05/21 - Mapas, Listas dešnej, info langas sulinkinti. Ant kambario (path, polygon) ir listo itemo (li) reikia pridet vienodus data-id.
