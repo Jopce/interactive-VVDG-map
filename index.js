@@ -1,4 +1,4 @@
-const fillcolor = "rgb(64, 43, 122)"; //vvdgpurple
+const fillcolor = "rgb(64, 43, 122)"; //vvdg purple
 
 document.addEventListener("DOMContentLoaded", function () {
     // make buttons call function that changes the visible floor
@@ -34,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     })
-    
-
 
     document.querySelector("#close").addEventListener("click", () => close())
     //user cliked on map
@@ -51,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             //create a window on the left with collected data from the dataset
             info(data.name, data.num, data.desc, data.path);
+
             this.style.fill = fillcolor;
         });
     })
@@ -94,7 +93,9 @@ function change_floor(floor) {
 //create window on the left
 function info(name, num, desc, path) {
     let infowindow = document.querySelector("#window")
-    infowindow.style.display = "inline"
+
+    infowindow.style.position = "sticky";
+    // infowindow.style.display = "block"
 
     let imgtag = infowindow.firstElementChild.firstElementChild
     let nametag = imgtag.nextSibling.nextSibling.nextSibling.nextSibling
@@ -106,13 +107,50 @@ function info(name, num, desc, path) {
     if (desc !== undefined) {desctag.textContent = desc;} else {desctag.textContent = "Aprašymo nėra"}
     if (path === undefined) {imgtag.style.display = "none"} else {imgtag.src = path; imgtag.style.display = "inline"}
 
-    infowindow.style.animationPlayState = "running"
+    // same as close()
+    const info_children = [...infowindow.children[0].children];
+    
+    console.log(info_children);
+
+    // shows clear button
+    info_children.forEach((element) => {
+        console.log(element, element.tagName);
+
+        if (element.tagName === 'BUTTON') {
+            element.style.display = "block";
+        } else if (element.tagName === 'H3') {
+            element.style.marginTop = "30px";
+        }
+    })
+
+    // infowindow.style.animationPlayState = "running"
 }
 
 function close() {
     infowindow = document.querySelector("#window");
     //https://morioh.com/p/b7a04514a637
-    infowindow.removeAttribute("style")
+    infowindow.removeAttribute("style");
+
+    console.log(infowindow.children[0].children);
+
+    // turn htmlcollection into an iteratable array
+    const info_children = [...infowindow.children[0].children];
+    
+    console.log(info_children);
+
+    // empties the info card
+    info_children.forEach((element) => {
+        console.log(element, element.tagName);
+
+        if (element.tagName === 'H3') {
+            element.innerHTML = "Pasirinkite kabinetą";
+            element.style.marginTop = "15px"
+        } else if (element.tagName === 'BUTTON') {
+            element.style.display = "none";
+        } else {
+            element.innerHTML = "";
+        }
+    })
 
     clear_color();
 }

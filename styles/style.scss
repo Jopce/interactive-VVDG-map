@@ -1,12 +1,6 @@
 $vvdg: rgb(64, 43, 122);
 $maphover: rgb(216, 216, 216);
-
-@mixin center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-}
+$windowcolor: rgba(235, 235, 235, 0.97);
 
 //visi kambariai st0 klases
 path.st0:hover,
@@ -41,15 +35,82 @@ body {
 #main-div {
     display: flex;
     flex-wrap: wrap;
+    flex-flow: row;
     padding: 0 1rem 0 1rem;
+    height: 100%;
+    width: 100%;
+
+    @media only screen and (max-width: 1024px) {
+        flex-flow: column;
+    }
+
+    #window {
+        flex: 0 1 15%;
+        animation: slide 0.3s ease-in paused;
+        position: sticky;
+        z-index: 3;
+        // cia pazet dar
+        // transform: translateY(1rem);
+        top: 1rem;
+        height: fit-content;
+        max-height: calc(100vh - 2rem);
+        display: block;
+        border: 2px solid $vvdg;
+        background-color: $windowcolor;
+        overflow-y: auto;
+
+        @media only screen and (max-width: 1024px) {
+            position: static;
+            margin-top: 1rem;
+        }
+
+        .info {
+            padding: 10px;
+            text-align: center;
+
+            .foto {
+                width: 80%;
+                height: auto;
+            }
+
+            button {
+                float: right;
+                text-align: center;
+                padding: 2px 2px 0 2px;
+                background-color: $windowcolor;
+                border: none;
+                border-radius: 10px;
+
+                &:hover {
+                    background-color: rgb(207, 207, 207);
+                    cursor: pointer;
+                }
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            h3 {
+                margin-top: 15px;
+                margin-bottom: 0;
+            }
+
+            h6 {
+                margin-top: 5px;
+                margin-bottom: 10px;
+            }
+        }
+    }
 
     // sita patvarkyt
     #map {
         padding: 1rem;
-        flex: 1 1 80%;
+        left: 100px;
+        flex: 1 1 50%;
         display: grid;
         place-items: center;
-
         svg {
             // cia reiktu pasiziuret dar
             // https://stackoverflow.com/questions/5321984/chrome-not-showing-a-svg-file
@@ -60,39 +121,40 @@ body {
     }
 
     #sidebar {
-        flex: 1 1 20%;
+        top: 1rem;
+        // kazko kai kuriuose device height nebeveikia top: ; tai del to margin dar uzdejau
+        margin-top: 1rem;
+        flex: 0 1 20%;
         text-align: center;
         // dar pasiziuret gal pakeist i position: fixed
         position: sticky;
-        // cia yra calc(vvdg navbar height + 1rem)
-        top: calc(120px + 1rem);
         // cia 140px yra navbar height + savo dadetas plotelis
-        height: calc(100vh - 150px);
+        height: calc(100vh - 2rem);
         // overflow-y: auto;
         z-index: 2;
         background-color: white;
         text-align: center;
         //pasiziuret dar del situ
         border: 2px solid $vvdg;
-        border-radius: 5px;
-        box-shadow: 0px 0px 4px $vvdg;
+        // border-radius: 5px;
+        // box-shadow: 0px 0px 4px $vvdg;
+        // https://www.whitebyte.info/programming/css/how-to-make-a-div-take-the-remaining-height
+        display: flex;
+        flex-flow: column;
 
         min-width: 250px;
 
-        // @media only screen and (max-width: 768px) {
-        //     grid-template-columns: 1fr;
-        //     max-width: 768px;
-        //     min-width: 200px;
-        //     margin: 1rem;
-        // }
+        @media only screen and (max-width: 1024px) {
+            position: static;
+            margin-bottom: 1rem;
+        }
 
         #changefloor {
             padding: 1rem;
-            height: 10%;
+            min-height: fit-content;
             position: sticky;
-            top: 0;
             border-bottom: 2px solid $vvdg;
-            background-color: white;
+            background-color: $windowcolor;
             box-shadow: 0px 0px 4px $vvdg;
 
             #floor1button,
@@ -119,16 +181,12 @@ body {
                     background-color: $vvdg;
                     color: white;
                     cursor: pointer;
-                    // ties sitais irgi dar galima pagalvot
-                    // transform: scale(0.99, 0.99);
-                    // transform: translateY(2px);
                     background-color: rgb(115, 89, 187);
                 }
             }
         }
 
         #rooms {
-            max-height: calc(100vh - 140px - 12%);
             overflow-y: auto;
             #floor1rooms,
             #floor2rooms,
@@ -159,63 +217,14 @@ body {
     }
 }
 
-$windowcolor: rgb(235, 235, 235);
-
-@keyframes slide {
-    from {
-        margin-left: -20%;
-    }
-    to {
-        margin-left: 0;
-    }
-}
-
-#window {
-    animation-name: slide;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in;
-    animation-play-state: paused;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    display: none;
-    width: 20%;
-    height: 100%;
-    border-right: 1px solid rgb(150, 150, 150);
-    background-color: $windowcolor;
-    .info {
-        padding: 10px;
-        text-align: center;
-        .foto {
-            width: 80%;
-            height: auto;
-        }
-        button {
-            float: right;
-            text-align: right;
-            padding: 2px 2px 0 2px;
-            background-color: $windowcolor;
-            border: none;
-            border-radius: 10px;
-            &:hover {
-                background-color: rgb(207, 207, 207);
-            }
-            img {
-                width: 24px;
-                height: 24px;
-            }
-        }
-        h3 {
-            margin-top: 30px;
-            margin-bottom: 0;
-        }
-        h6 {
-            margin-top: 5px;
-            margin-bottom: 10px;
-        }
-    }
-}
+// @keyframes slide {
+//     from {
+//         margin-left: -20%;
+//     }
+//     to {
+//         margin-left: 0;
+//     }
+// }
 
 #rotate {
     display: none;
@@ -246,6 +255,7 @@ $windowcolor: rgb(235, 235, 235);
 @media screen and (orientation: portrait) {
     #rotate {
         display: flex;
+        z-index: 5;
     }
     html,
     body {
