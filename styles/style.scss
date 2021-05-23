@@ -2,13 +2,6 @@ $vvdg: rgb(64, 43, 122);
 $maphover: rgb(216, 216, 216);
 $windowcolor: rgba(235, 235, 235, 0.97);
 
-@mixin center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-}
-
 //visi kambariai st0 klases
 path.st0:hover,
 polygon.st0:hover {
@@ -42,7 +35,14 @@ body {
 #main-div {
     display: flex;
     flex-wrap: wrap;
+    flex-flow: row;
     padding: 0 1rem 0 1rem;
+    height: 100%;
+    width: 100%;
+
+    @media only screen and (max-width: 1024px) {
+        flex-flow: column;
+    }
 
     #window {
         flex: 0 1 15%;
@@ -50,12 +50,19 @@ body {
         position: sticky;
         z-index: 3;
         // cia pazet dar
-        top: 140px;
+        // transform: translateY(1rem);
+        top: 1rem;
         height: fit-content;
-        max-height: 80vh;
+        max-height: calc(100vh - 2rem);
         display: block;
         border: 2px solid $vvdg;
         background-color: $windowcolor;
+        overflow-y: auto;
+
+        @media only screen and (max-width: 1024px) {
+            position: static;
+            margin-top: 1rem;
+        }
 
         .info {
             padding: 10px;
@@ -68,7 +75,7 @@ body {
 
             button {
                 float: right;
-                text-align: right;
+                text-align: center;
                 padding: 2px 2px 0 2px;
                 background-color: $windowcolor;
                 border: none;
@@ -114,39 +121,40 @@ body {
     }
 
     #sidebar {
+        top: 1rem;
+        // kazko kai kuriuose device height nebeveikia top: ; tai del to margin dar uzdejau
+        margin-top: 1rem;
         flex: 0 1 20%;
         text-align: center;
         // dar pasiziuret gal pakeist i position: fixed
         position: sticky;
-        // cia yra calc(vvdg navbar height + 1rem)
-        top: calc(120px + 1rem);
         // cia 140px yra navbar height + savo dadetas plotelis
-        height: calc(100vh - 150px);
+        height: calc(100vh - 2rem);
         // overflow-y: auto;
         z-index: 2;
         background-color: white;
         text-align: center;
         //pasiziuret dar del situ
         border: 2px solid $vvdg;
-        border-radius: 5px;
-        box-shadow: 0px 0px 4px $vvdg;
+        // border-radius: 5px;
+        // box-shadow: 0px 0px 4px $vvdg;
+        // https://www.whitebyte.info/programming/css/how-to-make-a-div-take-the-remaining-height
+        display: flex;
+        flex-flow: column;
 
         min-width: 250px;
 
-        // @media only screen and (max-width: 768px) {
-        //     grid-template-columns: 1fr;
-        //     max-width: 768px;
-        //     min-width: 200px;
-        //     margin: 1rem;
-        // }
+        @media only screen and (max-width: 1024px) {
+            position: static;
+            margin-bottom: 1rem;
+        }
 
         #changefloor {
             padding: 1rem;
-            height: 10%;
+            min-height: fit-content;
             position: sticky;
-            top: 0;
             border-bottom: 2px solid $vvdg;
-            background-color: white;
+            background-color: $windowcolor;
             box-shadow: 0px 0px 4px $vvdg;
 
             #floor1button,
@@ -173,16 +181,12 @@ body {
                     background-color: $vvdg;
                     color: white;
                     cursor: pointer;
-                    // ties sitais irgi dar galima pagalvot
-                    // transform: scale(0.99, 0.99);
-                    // transform: translateY(2px);
                     background-color: rgb(115, 89, 187);
                 }
             }
         }
 
         #rooms {
-            max-height: calc(100vh - 140px - 12%);
             overflow-y: auto;
             #floor1rooms,
             #floor2rooms,

@@ -87,6 +87,8 @@ function change_floor(floor) {
 //create window on the left
 function info(name, num, desc, path) {
     let infowindow = document.querySelector("#window")
+
+    infowindow.style.position = "sticky";
     // infowindow.style.display = "block"
 
     let imgtag = infowindow.firstElementChild.firstElementChild
