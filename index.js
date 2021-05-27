@@ -21,16 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
     //user clicked on list item
     document.querySelector("#rooms").querySelectorAll("li").forEach(function(btn) {
         btn.addEventListener("click", function() {
-            const ID = this.dataset.id;
-            const room = document.querySelector(`polygon[data-id="${ID}"], path[data-id="${ID}"]`);
-            const data = room.dataset;
-            if (room.style.fill !== fillcolor) {
-                this.firstElementChild.classList.add("active");
-                info(data.name, data.num, data.desc, data.path);
-                room.style.fill = fillcolor;
+            const data = this.dataset;
+            const ID = data.id;
+            if (this.firstElementChild.classList.contains("active")) {
+                this.classList.remove("active")
+                close()
             } else {
-                this.firstElementChild.classList.remove("active");
-                close();
+                this.firstElementChild.classList.add("active")
+                document.querySelectorAll(`polygon[data-id="${ID}"], path[data-id="${ID}"]`).forEach(function(room) {
+                    room.style.fill = fillcolor;
+                });
+                info(data.name, data.num, data.desc, data.path);
             }
         });
     })
