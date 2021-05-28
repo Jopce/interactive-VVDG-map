@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //listas denej
             let listitem = document.querySelector(`li[data-id="${data.id}"]`)
             if (listitem !== null) {
-                listitem.firstElementChild.classList.add("active")
+                listitem.firstElementChild.classList.add("active");
             }
             //create a window on the left with collected data from the dataset
             info(data.name, data.num, data.desc, data.path);
