@@ -25,3 +25,5 @@ Aš planuoju daryt dabar, kad galima būtų junginet tarp aukštų tai pranešu,
 2021/05/21 - Mapas, Listas dešnej, info langas sulinkinti. Ant kambario (path, polygon) ir listo itemo (li) reikia pridet vienodus data-id.
 
 2021/05/23 - Layout iš esmės pabaigtas, mobile responsive irgi turbūt pabaigtas, stiliukas turbūt irgi, bet dar gali tekti ką nors keist. Kaip suprantu liko nuobuodžiausia dalis - surasyt kambarius ir ju data.
+
+2021/05/28 - Prie data pasedėjau. 2F ir 3F turi kambariai kiekvienas savo data-id  ir yra sujungti su li. Tiem, kuriuos žinojau sudėjau data-name. Tiem kambariam, kurių nenoriu rodyt, tsg html'e uždėjau vietoj data-id-none, kad paskui nereiktų ieškot id. Pastebėjau, kad reiktų 2A kabą atskirt nuo koridoriaus ir 2F akvariuma atskirt.
