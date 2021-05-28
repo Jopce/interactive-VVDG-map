@@ -40,9 +40,16 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#close").addEventListener("click", () => close())
     //user cliked on map
     document.querySelectorAll(".st0").forEach(function(room) {
+        // if this room doesn't have an id it means that it does not need to be displayed
+        if (!room.dataset.id) {
+            room.style.display = "none";
+        }
+
         room.addEventListener("click", function() {
             clear_color();
             const data = this.dataset;
+
+            console.log(data.id);
 
             //listas denej
             let listitem = document.querySelector(`li[data-id="${data.id}"]`)
