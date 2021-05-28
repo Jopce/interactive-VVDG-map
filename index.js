@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.classList.remove("active")
                 close()
             } else {
+                close()
                 this.firstElementChild.classList.add("active")
                 document.querySelectorAll(`polygon[data-id="${ID}"], path[data-id="${ID}"]`).forEach(function(room) {
                     room.style.fill = fillcolor;
