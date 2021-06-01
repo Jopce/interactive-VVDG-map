@@ -72,17 +72,19 @@ body {
             text-align: center;
 
             .foto {
-                width: 80%;
+                width: 100%;
                 height: auto;
             }
 
             button {
+                display: block;
                 float: right;
                 text-align: center;
                 padding: 2px 2px 0 2px;
                 background-color: $windowcolor;
                 border: none;
                 border-radius: 10px;
+                margin-bottom: 10px;
 
                 &:hover {
                     background-color: rgb(207, 207, 207);

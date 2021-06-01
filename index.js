@@ -106,15 +106,17 @@ function info(name, num, desc, path) {
     infowindow.style.position = "sticky";
     // infowindow.style.display = "block"
 
-    let imgtag = infowindow.firstElementChild.firstElementChild
-    let nametag = imgtag.nextSibling.nextSibling.nextSibling.nextSibling
-    let numtag = imgtag.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling
-    let desctag = infowindow.firstElementChild.lastElementChild
+    let close = infowindow.firstElementChild.firstElementChild;
+    let imgtag = close.nextElementSibling;
+    let nametag = imgtag.nextElementSibling;
+    let numtag = nametag.nextElementSibling;
+    let desctag = numtag.nextElementSibling;
 
     if (name !== undefined) {nametag.textContent = name;} else {nametag.textContent = "Pavadinimo nėra";}
     if (num !== undefined) {numtag.textContent = `Nr. - ${num}`;} else {numtag.textContent = "";}
     if (desc !== undefined) {desctag.textContent = desc;} else {desctag.textContent = "Aprašymo nėra"}
-    if (path === undefined) {imgtag.style.display = "none"} else {imgtag.src = path; imgtag.style.display = "inline"}
+    //if (path === undefined) {imgtag.style.display = "none"} else {imgtag.src = path; imgtag.style.display = "inline"}
+    if (path === undefined) {imgtag.src = "static/images/vvdg-logotipas.png"; imgtag.style.display = "block"} else {imgtag.src = path; imgtag.style.display = "block"}
 
     // same as close()
     const info_children = [...infowindow.children[0].children];
@@ -155,6 +157,8 @@ function close() {
             element.innerHTML = "Pasirinkite kabinetą";
             element.style.marginTop = "15px"
         } else if (element.tagName === 'BUTTON') {
+            element.style.display = "none";
+        } else if (element.tagName === 'IMG') {
             element.style.display = "none";
         } else {
             element.innerHTML = "";
