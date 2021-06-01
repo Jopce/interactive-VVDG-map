@@ -71,6 +71,7 @@ body {
   border: 2px solid #402b7a;
   background-color: rgba(235, 235, 235, 0.97);
   overflow-y: auto;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -86,19 +87,34 @@ body {
 }
 
 #main-div #window .info .foto {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  margin: auto auto auto auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  #main-div #window .info .foto {
+    width: 50%;
+    height: auto;
+    text-align: center;
+  }
 }
 
 #main-div #window .info button {
-  display: block;
   float: right;
   text-align: center;
   padding: 2px 2px 0 2px;
   background-color: rgba(235, 235, 235, 0.97);
   border: none;
   border-radius: 10px;
-  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1024px) {
+  #main-div #window .info button {
+    position: fixed;
+    right: 1.5rem;
+    top: 1.5rem;
+  }
 }
 
 #main-div #window .info button:hover {

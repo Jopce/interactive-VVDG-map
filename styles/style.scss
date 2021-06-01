@@ -61,6 +61,7 @@ body {
         border: 2px solid $vvdg;
         background-color: $windowcolor;
         overflow-y: auto;
+        text-align: center;
 
         @media only screen and (max-width: 1024px) {
             position: static;
@@ -72,19 +73,30 @@ body {
             text-align: center;
 
             .foto {
-                width: 100%;
+                max-width: 100%;
                 height: auto;
+                margin: auto auto auto auto;
+
+                @media only screen and (max-width: 1024px) {
+                    width: 50%;
+                    height: auto;
+                    text-align: center;
+                }
             }
 
             button {
-                display: block;
                 float: right;
                 text-align: center;
                 padding: 2px 2px 0 2px;
                 background-color: $windowcolor;
                 border: none;
                 border-radius: 10px;
-                margin-bottom: 10px;
+
+                @media only screen and (max-width: 1024px) {
+                    position: fixed;
+                    right: 1.5rem;
+                    top: 1.5rem;
+                }
 
                 &:hover {
                     background-color: rgb(207, 207, 207);
