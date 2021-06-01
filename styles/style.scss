@@ -201,16 +201,16 @@ body {
                     button {
                         font-size: 1.5rem;
                         padding: none;
-                        margin: 0px 0px 3px 0px;
                         background-color: rgba(0, 0, 0, 0); // see through
                         border: none;
                         color: rgba(0, 0, 0, 0.5);
+                        border-bottom: 3px solid rgba(64, 43, 122, 0);
+                        transition: all 0.2s ease;
 
                         &:hover,
                         &.active {
                             cursor: pointer;
-                            border-bottom: 3px solid $vvdg; // ta spalva kurios yra kambarys
-                            margin: 0px 0px 0px 0px;
+                            border-bottom: 3px solid rgba(64, 43, 122, 1); // ta spalva kurios yra kambarys
                             color: rgba(0, 0, 0, 1);
                         }
                     }

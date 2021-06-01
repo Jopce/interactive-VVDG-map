@@ -231,10 +231,12 @@ body {
 #main-div #sidebar #rooms #floor3rooms ul button {
   font-size: 1.5rem;
   padding: none;
-  margin: 0px 0px 3px 0px;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: rgba(0, 0, 0, 0.5);
+  border-bottom: 3px solid rgba(64, 43, 122, 0);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 #main-div #sidebar #rooms #floor1rooms ul button:hover, #main-div #sidebar #rooms #floor1rooms ul button.active,
@@ -244,7 +246,6 @@ body {
 #main-div #sidebar #rooms #floor3rooms ul button.active {
   cursor: pointer;
   border-bottom: 3px solid #402b7a;
-  margin: 0px 0px 0px 0px;
   color: black;
 }
 
