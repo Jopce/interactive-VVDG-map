@@ -94,7 +94,7 @@ body {
 
 @media only screen and (max-width: 1024px) {
   #main-div #window .info .foto {
-    width: 50%;
+    width: 40%;
     height: auto;
     text-align: center;
   }
@@ -231,6 +231,12 @@ body {
   color: white;
   cursor: pointer;
   background-color: #7359bb;
+}
+
+#main-div #sidebar #changefloor div {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 #main-div #sidebar #rooms {

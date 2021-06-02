@@ -78,7 +78,7 @@ body {
                 margin: auto auto auto auto;
 
                 @media only screen and (max-width: 1024px) {
-                    width: 50%;
+                    width: 40%;
                     height: auto;
                     text-align: center;
                 }
@@ -200,6 +200,12 @@ body {
                     cursor: pointer;
                     background-color: rgb(115, 89, 187);
                 }
+            }
+
+            div {
+                margin-bottom: 15px;
+                font-weight: bold;
+                font-size: 18px;
             }
         }
 
