@@ -55,8 +55,8 @@ body {
 
 #main-div #window {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 15%;
-          flex: 0 1 15%;
+      -ms-flex: 0 1 18%;
+          flex: 0 1 18%;
   -webkit-animation: slide 0.3s ease-in paused;
           animation: slide 0.3s ease-in paused;
   position: -webkit-sticky;
@@ -231,12 +231,6 @@ body {
   color: white;
   cursor: pointer;
   background-color: #7359bb;
-}
-
-#main-div #sidebar #changefloor div {
-  margin-bottom: 15px;
-  font-weight: bold;
-  font-size: 18px;
 }
 
 #main-div #sidebar #rooms {

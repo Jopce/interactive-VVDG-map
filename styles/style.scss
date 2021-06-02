@@ -48,7 +48,7 @@ body {
     }
 
     #window {
-        flex: 0 1 15%;
+        flex: 0 1 18%;
         animation: slide 0.3s ease-in paused;
         position: sticky;
         z-index: 3;
@@ -200,12 +200,6 @@ body {
                     cursor: pointer;
                     background-color: rgb(115, 89, 187);
                 }
-            }
-
-            div {
-                margin-bottom: 15px;
-                font-weight: bold;
-                font-size: 18px;
             }
         }
 
