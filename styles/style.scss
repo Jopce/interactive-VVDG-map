@@ -75,7 +75,8 @@ body {
             .foto {
                 max-width: 100%;
                 height: auto;
-                margin: auto auto auto auto;
+                margin: auto;
+                padding-top: 0.2rem;
 
                 @media only screen and (max-width: 1024px) {
                     width: 40%;
@@ -128,10 +129,11 @@ body {
         flex: 1 1 50%;
         display: grid;
         place-items: center;
+
+        .st0 {
+            transition: fill 0.15s ease;
+        }
         svg {
-            // cia reiktu pasiziuret dar
-            // https://stackoverflow.com/questions/5321984/chrome-not-showing-a-svg-file
-            // lol per chrome nerodo vps, planuoju taisyt
             max-width: 100%;
             height: auto;
         }

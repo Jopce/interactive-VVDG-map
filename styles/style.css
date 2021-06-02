@@ -89,7 +89,8 @@ body {
 #main-div #window .info .foto {
   max-width: 100%;
   height: auto;
-  margin: auto auto auto auto;
+  margin: auto;
+  padding-top: 0.2rem;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -146,6 +147,11 @@ body {
   display: -ms-grid;
   display: grid;
   place-items: center;
+}
+
+#main-div #map .st0 {
+  -webkit-transition: fill 0.15s ease;
+  transition: fill 0.15s ease;
 }
 
 #main-div #map svg {

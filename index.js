@@ -97,6 +97,8 @@ function change_floor(floor) {
     document.querySelector(`#floor3button`).classList.remove("active");
 
     document.querySelector(`#${floor}button`).classList.add("active");
+
+    close();
 }
 
 //create window on the left
@@ -113,7 +115,7 @@ function info(name, num, desc, path) {
     let desctag = numtag.nextElementSibling;
 
     if (name !== undefined) {nametag.textContent = name;} else {nametag.textContent = "Pavadinimo nėra";}
-    if (num !== undefined) {numtag.textContent = `Nr. - ${num}`;} else {numtag.textContent = "";}
+    if (num !== undefined) {numtag.textContent = `Nr. ${num}`;} else {numtag.textContent = "";}
     if (desc !== undefined) {desctag.textContent = desc;} else {desctag.textContent = "Aprašymo nėra"}
     //if (path === undefined) {imgtag.style.display = "none"} else {imgtag.src = path; imgtag.style.display = "inline"}
     if (path === undefined) {imgtag.src = "static/images/vvdg-logotipas.png"; imgtag.style.display = "block"} else {imgtag.src = path; imgtag.style.display = "block"}
