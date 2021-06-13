@@ -2,10 +2,6 @@ $vvdg: rgb(64, 43, 122);
 $maphover: rgb(216, 216, 216);
 $windowcolor: rgba(235, 235, 235, 0.97);
 
-// https://aykevl.nl/2014/09/fix-jumping-scrollbar
-// gal sita dar idet reiks?
-
-//visi kambariai st0 klases
 path.st0:hover,
 polygon.st0:hover {
     fill: $maphover;
@@ -20,19 +16,6 @@ polygon.st0:hover {
 body {
     padding: 0;
     margin: 0;
-}
-
-#navbar {
-    height: 120px;
-    width: 100%;
-    background-color: $vvdg;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    color: white;
-    margin: 0;
-    margin-bottom: 1rem;
-    z-index: 1;
 }
 
 #main-div {
@@ -52,8 +35,6 @@ body {
         animation: slide 0.3s ease-in paused;
         position: sticky;
         z-index: 3;
-        // cia pazet dar
-        // transform: translateY(1rem);
         top: 1rem;
         height: fit-content;
         max-height: calc(100vh - 2rem);
@@ -122,7 +103,6 @@ body {
         }
     }
 
-    // sita patvarkyt
     #map {
         padding: 1rem;
         left: 100px;
@@ -141,23 +121,15 @@ body {
 
     #sidebar {
         top: 1rem;
-        // kazko kai kuriuose device height nebeveikia top: ; tai del to margin dar uzdejau
         margin-top: 1rem;
         flex: 0 1 20%;
         text-align: center;
-        // dar pasiziuret gal pakeist i position: fixed
         position: sticky;
-        // cia 140px yra navbar height + savo dadetas plotelis
         height: calc(100vh - 2rem);
-        // overflow-y: auto;
         z-index: 2;
         background-color: white;
         text-align: center;
-        //pasiziuret dar del situ
         border: 2px solid $vvdg;
-        // border-radius: 5px;
-        // box-shadow: 0px 0px 4px $vvdg;
-        // https://www.whitebyte.info/programming/css/how-to-make-a-div-take-the-remaining-height
         display: flex;
         flex-flow: column;
 
@@ -235,15 +207,6 @@ body {
         }
     }
 }
-
-// @keyframes slide {
-//     from {
-//         margin-left: -20%;
-//     }
-//     to {
-//         margin-left: 0;
-//     }
-// }
 
 #rotate {
     display: none;

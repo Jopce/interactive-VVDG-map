@@ -15,20 +15,6 @@ body {
   margin: 0;
 }
 
-#navbar {
-  height: 120px;
-  width: 100%;
-  background-color: #402b7a;
-  text-align: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  color: white;
-  margin: 0;
-  margin-bottom: 1rem;
-  z-index: 1;
-}
-
 #main-div {
   display: -webkit-box;
   display: -ms-flexbox;

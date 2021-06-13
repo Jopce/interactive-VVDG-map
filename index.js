@@ -14,9 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
         .querySelector("#floor3button")
         .addEventListener("click", () => change_floor("floor3"));
 
-    // by default load 2nd floor
+    // by default load 2nd floor (entrance)
     change_floor("floor2");
 
+    document.querySelector("#close").addEventListener("click", () => close())
 
     //user clicked on list item
     document.querySelector("#rooms").querySelectorAll("li").forEach(function(btn) {
@@ -37,8 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     })
 
-    document.querySelector("#close").addEventListener("click", () => close())
-    //user cliked on map
     document.querySelectorAll(".st0").forEach(function(room) {
         // if this room doesn't have an id it means that it does not need to be displayed
         if (!room.dataset.id) {
@@ -46,16 +45,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         room.addEventListener("click", function() {
+            // user clicks on map
             clear_color();
             const data = this.dataset;
 
-            console.log(data.id);
-
-            //listas denej
+            //list on the right
             let listitem = document.querySelector(`li[data-id="${data.id}"]`)
             if (listitem !== null) {
                 listitem.firstElementChild.classList.add("active");
             }
+
             //create a window on the left with collected data from the dataset
             info(data.name, data.num, data.desc, data.path);
 
@@ -106,7 +105,6 @@ function info(name, num, desc, path) {
     let infowindow = document.querySelector("#window")
 
     infowindow.style.position = "sticky";
-    // infowindow.style.display = "block"
 
     let close = infowindow.firstElementChild.firstElementChild;
     let imgtag = close.nextElementSibling;
@@ -117,26 +115,19 @@ function info(name, num, desc, path) {
     if (name !== undefined) {nametag.textContent = name;} else {nametag.textContent = "Pavadinimo nėra";}
     if (num !== undefined) {numtag.textContent = `Nr. ${num}`;} else {numtag.textContent = "";}
     if (desc !== undefined) {desctag.textContent = desc;} else {desctag.textContent = "Aprašymo nėra"}
-    //if (path === undefined) {imgtag.style.display = "none"} else {imgtag.src = path; imgtag.style.display = "inline"}
     if (path === undefined) {imgtag.src = "static/images/vvdg-logotipas.png"; imgtag.style.display = "block"} else {imgtag.src = path; imgtag.style.display = "block"}
 
     // same as close()
     const info_children = [...infowindow.children[0].children];
     
-    console.log(info_children);
-
     // shows clear button
     info_children.forEach((element) => {
-        console.log(element, element.tagName);
-
         if (element.tagName === 'BUTTON') {
             element.style.display = "block";
         } else if (element.tagName === 'H3') {
             element.style.marginTop = "30px";
         }
     })
-
-    // infowindow.style.animationPlayState = "running"
 }
 
 function close() {
@@ -144,17 +135,11 @@ function close() {
     //https://morioh.com/p/b7a04514a637
     infowindow.removeAttribute("style");
 
-    console.log(infowindow.children[0].children);
-
     // turn htmlcollection into an iteratable array
     const info_children = [...infowindow.children[0].children];
     
-    console.log(info_children);
-
     // empties the info card
     info_children.forEach((element) => {
-        console.log(element, element.tagName);
-
         if (element.tagName === 'H3') {
             element.innerHTML = "Pasirinkite kabinetą";
             element.style.marginTop = "15px"
@@ -162,6 +147,7 @@ function close() {
             element.style.display = "none";
         } else if (element.tagName === 'IMG') {
             element.style.display = "none";
+            element.src = '';
         } else {
             element.innerHTML = "";
         }
